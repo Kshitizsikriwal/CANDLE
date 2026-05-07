@@ -3,7 +3,7 @@
 ### From Correlation to Causation in Financial AI
 
 <p align="center">
-  <img src="causal-3/src/assets/architecture.png" width="100%">
+  <img src="/src/assets/architecture.png" width="100%">
 </p>
 
 ---
