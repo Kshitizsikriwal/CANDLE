@@ -1,0 +1,56 @@
+# CANDLE/FCIS Configuration
+
+# Data Settings
+data:
+  # Stock tickers (NSE India)
+  tickers:
+    - RELIANCE.NS
+    - TCS.NS
+    - INFY.NS
+    - HDFCBANK.NS
+    - ICICIBANK.NS
+    - WIPRO.NS
+    - SBIN.NS
+    - MARUTI.NS
+    - ADANIENT.NS
+    - BAJFINANCE.NS
+  
+  # Date range (2016-2026 includes COVID period 2020-2021)
+  start_date: "2016-01-01"
+  end_date: "2026-01-01"
+  
+  # Paths
+  raw_data_path: "data/raw"
+  processed_data_path: "data/processed"
+  
+  # News API (get free key from newsapi.org)
+  news_api_key: null  # Set via environment variable NEWS_API_KEY
+
+# Causal Discovery Settings
+causal_discovery:
+  algorithm: "pcmci_plus"
+  pc_alpha: 0.05
+  tau_max: 5  # Maximum time lag
+  tau_min: 1  # Minimum time lag
+  
+# FinBERT Sentiment Analysis
+sentiment:
+  model_name: "ProsusAI/finbert"
+  batch_size: 32
+  max_length: 512
+
+# Inference Settings
+inference:
+  method: "backdoor"  # backdoor, frontdoor, iv
+  confidence_level: 0.95
+
+# Counterfactual Settings
+counterfactual:
+  num_samples: 1000
+  method: "linear"
+
+# Output
+output:
+  results_path: "results"
+  figures_path: "results/figures"
+  logs_path: "logs"
